@@ -10,6 +10,8 @@ require('./bootstrap');
 window.Vue = require('vue');
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
+import VuePerfectScrollbar from 'vue-perfect-scrollbar';
+Vue.component('vue-perfect-scrollbar',VuePerfectScrollbar);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -35,5 +37,5 @@ const app = new Vue({
         return Math.floor(Math.random() * (max - min + 1)) + min
       }
     }	
-    
+
 });
