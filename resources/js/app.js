@@ -20,6 +20,7 @@ Vue.component('vue-perfect-scrollbar',VuePerfectScrollbar);
  */
 
 Vue.component('main-menu', require('./components/MainMenu.vue'));
+Vue.component('login-page',require('./components/Login.vue'));
 
 const app = new Vue({
 	data(){

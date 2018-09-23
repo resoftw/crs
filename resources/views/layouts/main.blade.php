@@ -37,7 +37,7 @@
         <v-spacer></v-spacer>
 
         <v-toolbar-items>
-          <v-btn flat>Login</v-btn>
+          <v-btn flat href="{{route('login')}}">Login</v-btn>
         </v-toolbar-items>        
       </v-toolbar>
       <v-content>
