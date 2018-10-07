@@ -14,3 +14,11 @@
 }
 
 @import '~vuetify/dist/vuetify.min.css';
+
+table.v-datatable.v-table tbody tr td {
+  border:1px solid #eee;
+}
+table.v-datatable.v-table th {
+  border:1px solid #888;
+  font-weight:bold;
+}

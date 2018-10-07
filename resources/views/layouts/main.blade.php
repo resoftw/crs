@@ -5,6 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="base-url" content="{{url('/')}}">
+@auth
+    <meta name="api-token" content="{{ auth()->user()->api_token }}">
+@endauth
+  
   <title>CRS</title>
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -22,24 +26,8 @@
       <main-menu></main-menu>
 
     </v-navigation-drawer>      
-    <v-toolbar
-      :clipped-left="$vuetify.breakpoint.lgAndUp"
-      color="red darken-4"
-      dark
-      app
-      fixed
-    >    
-        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-        <span class="title ml-3 mr-5">C<span class="font-weight-light">ostumer</span>
-        R<span class="font-weight-light">elationship</span>
-        S<span class="font-weight-light">ystem</span></span>
+      <tool-bar></tool-bar>
 
-        <v-spacer></v-spacer>
-
-        <v-toolbar-items>
-          <v-btn flat href="{{route('login')}}">Login</v-btn>
-        </v-toolbar-items>        
-      </v-toolbar>
       <v-content>
         <v-container fluid>
           @yield('content')

@@ -11,7 +11,7 @@ window.Popper = require('popper.js').default;
 try {
     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap');
+    //require('bootstrap');
 } catch (e) {}
 
 /**
@@ -23,6 +23,8 @@ try {
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.baseURL = document.head.querySelector('meta[name="base-url"]').content;
+window._base_url_ = document.head.querySelector('meta[name="base-url"]').content;
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -37,6 +39,13 @@ if (token) {
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
+
+let api_token = document.head.querySelector('meta[name="api-token"]');
+
+if (api_token) {
+  axios.defaults.headers.common['Authorization'] = 'Bearer ' + api_token.content;
+}
+
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

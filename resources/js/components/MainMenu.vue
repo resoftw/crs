@@ -111,7 +111,7 @@ export default {
 						{ title: 'Event Promotion' },
 						{ title: 'Distributor' },
 						{ title: 'Template' },
-						{ title: 'Users' },
+						{ title: 'Users' , href: '/user' },
 						{ title: 'Reports' },
 						],
 				},
